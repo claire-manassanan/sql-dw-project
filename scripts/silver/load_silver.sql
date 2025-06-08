@@ -239,11 +239,11 @@ BEGIN
 		RAISE unique_violation USING MESSAGE = '=========================================='
 		RAISE unique_violation USING MESSAGE = 'Loading Silver Layer is Completed';
         RAISE unique_violation USING MESSAGE = '   - Total Load Duration: %' || CAST(batch_end_time - batch_start_time) AS VARCHAR || ' seconds';
-		RAISE unique_violation USING MESSAGE = '=========================================='
+		RAISE unique_violation USING MESSAGE = '==========================================';
 
   EXCEPTION
-		RAISE unique_violation USING MESSAGE = '=========================================='
-		RAISE unique_violation USING MESSAGE = 'ERROR OCCURED DURING LOADING BRONZE LAYER'
+		RAISE unique_violation USING MESSAGE = '==========================================';
+		RAISE unique_violation USING MESSAGE = 'ERROR OCCURED DURING LOADING BRONZE LAYER';
       /*
 		RAISE unique_violation USING MESSAGE = 'Error Message' || ERROR_MESSAGE();
 		RAISE unique_violation USING MESSAGE = 'Error Message' || CAST (ERROR_NUMBER() AS VARCHAR);
